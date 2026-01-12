@@ -9,12 +9,13 @@ interface IDialog {
     title?: string;
     description?: string;
     children?: ReactNode;
-    showConfirmButton?: boolean;
-    showCancelButton?: boolean;
     isLoading?: boolean;
     align?: "left" | "right" | "center";
+    showConfirmButton?: boolean;
+    showCancelButton?: boolean;
     cancelButtonText?: string;
     confirmButtonText?: string;
+    confirmButtonColor?: "primary" | "danger";
 }
 
 export default function Dialog({
@@ -29,6 +30,7 @@ export default function Dialog({
     cancelButtonText,
     showConfirmButton,
     confirmButtonText,
+    confirmButtonColor,
     align,
 }: IDialog) {
     if (!isOpen) {
@@ -59,6 +61,7 @@ export default function Dialog({
                                 text={confirmButtonText || "Confirm"}
                                 loading={isLoading}
                                 onClick={() => (onConfirm ? onConfirm() : "")}
+                                color={confirmButtonColor ?? "primary"}
                             />
                         )}
                         {showCancelButton && (
