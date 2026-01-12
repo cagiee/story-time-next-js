@@ -1,0 +1,62 @@
+.profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include vwUnit("gap", 24);
+    @include vwUnit("padding-bottom", 48);
+
+    &__title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        font-family: "PT Serif";
+        font-weight: normal;
+        @include vwUnit("font-size", 36);
+        margin: 0;
+        padding: 0;
+    }
+
+    &__image-wrapper {
+        display: flex;
+        align-items: center;
+        @include vwUnit("gap", 24);
+    }
+
+    &__image {
+        @include vwUnit("width", 120);
+        @include vwUnit("height", 120);
+        position: relative;
+        overflow: hidden;
+        border-radius: 9999px;
+    }
+
+    &__image-button {
+        display: flex;
+        flex-direction: column;
+        @include vwUnit("gap", 12);
+
+        & > span {
+            @include vwUnit("font-size", 15);
+            color: rgba($primary, 0.9);
+        }
+    }
+
+    &__label {
+        @include vwUnit("font-size", 18);
+        display: block;
+        @include vwUnit("margin-top", 12);
+        @include vwUnit("margin-bottom", 6);
+        color: rgba($primary, 1);
+        // @include vwUnit("letter-spacing", 1);
+        font-weight: 700;
+        // font-family: "PT Serif";
+    }
+
+    &__change-password {
+        display: flex;
+        flex-direction: column;
+        @include vwUnit("gap", 24);
+    }
+}

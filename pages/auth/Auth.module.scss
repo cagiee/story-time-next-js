@@ -1,0 +1,186 @@
+.auth {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    overflow: hidden;
+
+    & > div {
+        @include vwUnit("padding-top", 64);
+        @include vwUnit("padding-bottom", 64);
+        @include vwUnit("padding-left", 120);
+        @include vwUnit("padding-right", 120);
+    }
+    &__left,
+    &__right {
+        width: 50%;
+        height: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+
+        &--fade-in-left {
+            animation: fadeInLeft 0.5s both;
+        }
+        &--fade-in-right {
+            animation: fadeInRight 0.5s both;
+        }
+
+        &--fade-out-left {
+            animation: fadeOutLeft 0.5s both;
+        }
+        &--fade-out-right {
+            animation: fadeOutRight 0.5s both;
+        }
+    }
+    &__content {
+        width: 100%;
+    }
+    &__background {
+        position: absolute;
+        background-color: $primary;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        color: $surface;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &--login {
+            transform: translate(-100%);
+            animation: slideLoginAnimation ease-in both;
+        }
+        &--register {
+            animation: slideRegisterAnimation ease-in both;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+    &__back {
+        color: $primary;
+        @include vwUnit("margin-bottom", 36);
+        display: flex;
+        align-items: center;
+        @include vwUnit("gap", 8);
+        text-decoration: none;
+        color: rgba($primary, 0.7);
+    }
+    &__image-wrapper {
+        position: relative;
+        min-width: 50vw;
+        width: 50vw;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    &__title {
+        @include vwUnit("margin-bottom", 48);
+        @include vwUnit("font-size", 48);
+        font-family: "PT Serif";
+        font-weight: 400;
+        display: block;
+    }
+    &__form {
+        & > form {
+            display: flex;
+            flex-direction: column;
+            @include vwUnit("gap", 32);
+        }
+    }
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $surface;
+        animation: blurOut 0.5s both;
+        animation-delay: 0.5s;
+    }
+}
+
+@keyframes slideLoginAnimation {
+    0% {
+        width: 50%;
+    }
+    25% {
+        width: 36%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+@keyframes slideRegisterAnimation {
+    0% {
+        width: 50%;
+    }
+    25% {
+        width: 36%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 50%;
+    }
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-25%);
+    }
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(25%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(25%);
+    }
+}
+@keyframes blurOut {
+    0% {
+        background-color: #ffffffff;
+        backdrop-filter: blur(16px);
+    }
+    100% {
+        background-color: #ffffff00;
+        backdrop-filter: blur(0);
+    }
+}

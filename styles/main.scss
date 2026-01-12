@@ -1,0 +1,83 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "manrope";
+    @include vwUnit("font-size", 16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    @include vwUnit("padding-left", 48);
+    @include vwUnit("padding-right", 48);
+}
+
+main {
+    min-height: 100vh;
+}
+
+::selection {
+    background-color: rgba($primary, 0.8);
+    color: $surface;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s both;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s both;
+}
+
+.loading-spinner-animation {
+    animation: spinner 0.5s infinite;
+}
+
+.authenticated {
+    &__wrapper {
+        display: flex;
+        @include vwUnit("padding-top", 120);
+        @include vwUnit("gap", 48);
+    }
+    &__sidemenu {
+        @include vwUnit("max-width", 300);
+        width: 100%;
+    }
+}
+
+hr {
+    border-color: rgba($primary, 0.1);
+
+    // &.divider {
+    //     @include vwUnit("margin-top", 24);
+    //     @include vwUnit("margin-bottom", 24);
+    // }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes spinner {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

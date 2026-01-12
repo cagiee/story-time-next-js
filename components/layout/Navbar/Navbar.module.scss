@@ -1,0 +1,102 @@
+.navbar {
+    @include vwUnit("height", 120);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba($surface, 0.9);
+    backdrop-filter: blur(16px);
+    z-index: 999;
+
+    &__logo {
+        @include vwUnit("width", 180);
+        @include vwUnit("height", 70);
+        position: absolute;
+        @include vwUnit("top", 24);
+
+        &--scroll-top {
+            @include vwUnit("width", 320);
+            @include vwUnit("height", 180);
+            @include vwUnit("top", 206);
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__auth {
+        display: flex;
+        @include vwUnit("gap", 12);
+
+        & > a {
+            text-decoration: none;
+        }
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        @include vwUnit("gap", 12);
+        border: 1px solid rgba($primary, 0.3);
+        @include vwUnit("padding-top", 8);
+        @include vwUnit("padding-bottom", 8);
+        @include vwUnit("padding-left", 12);
+        @include vwUnit("padding-right", 12);
+        @include vwUnit("border-radius", 8);
+    }
+
+    &__profile-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__profile-image {
+        @include vwUnit("width", 36);
+        @include vwUnit("height", 36);
+        position: relative;
+        // @include vwUnit("border-radius", 8);
+        border-radius: 9999px;
+        overflow: hidden;
+    }
+    &__profile-name {
+        display: block;
+        font-weight: 700;
+        @include vwUnit("margin-bottom", 2);
+    }
+    &__profile-email {
+        color: rgba($primary, 0.8);
+        @include vwUnit("font-size", 12);
+    }
+    &__profile-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include vwUnit("margin-left", 24);
+    }
+
+    &__items-wrapper {
+        list-style: none;
+        display: flex;
+        @include vwUnit("gap", 24);
+
+        & > li {
+            display: flex;
+            align-items: center;
+            & > a {
+                @include vwUnit("gap", 6);
+                display: flex;
+                align-items: center;
+                color: $primary;
+
+                &:not(:hover) {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

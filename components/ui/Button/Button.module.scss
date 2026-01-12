@@ -1,0 +1,62 @@
+.button {
+    @include vwUnit("padding-top", 16);
+    @include vwUnit("padding-bottom", 16);
+    @include vwUnit("padding-left", 24);
+    @include vwUnit("padding-right", 24);
+    @include vwUnit("font-size", 16);
+    @include vwUnit("border-radius", 8);
+    @include vwUnit("gap", 6);
+    position: relative;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-family: manrope;
+    letter-spacing: 0.027em;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+
+    &__color {
+        &--danger {
+            background-color: $danger;
+            color: $surface;
+            border-color: rgba($danger, 0.2);
+
+            &.button__variant--outlined {
+                background-color: transparent;
+                color: $danger;
+            }
+            &.button__variant--fill-outlined {
+                background-color: $surface;
+                color: $danger;
+            }
+        }
+        &--success {
+            background-color: $success;
+            color: $surface;
+            border-color: rgba($success, 0.2);
+        }
+        &--primary {
+            background-color: $primary;
+            color: $surface;
+            border-color: rgba($primary, 0.2);
+
+            &.button__variant--outlined {
+                background-color: transparent;
+                color: $primary;
+            }
+            &.button__variant--fill-outlined {
+                background-color: $surface;
+                color: $primary;
+            }
+        }
+    }
+
+    &[disabled] {
+        opacity: 0.5;
+    }
+
+    &__fluid {
+        display: block;
+        width: 100%;
+    }
+}

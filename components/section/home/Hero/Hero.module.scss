@@ -1,0 +1,79 @@
+.hero {
+    min-height: 100vh;
+    @include vwUnit("padding-top", 120);
+    &__content {
+        color: $primary;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        // @include vwUnit("width", 500);
+        @include vwUnit("font-size", 80);
+        font-weight: normal;
+        font-family: "ptSerif";
+        margin: 0;
+        padding: 0;
+        @include vwUnit("margin-top", 24);
+        // text-align: center;
+
+        span {
+            opacity: 0;
+            display: block;
+        }
+    }
+    &__description {
+        @include vwUnit("font-size", 21);
+        @include vwUnit("width", 802);
+        @include vwUnit("margin-top", 48);
+        @include vwUnit("margin-bottom", 48);
+        display: block;
+        line-height: 150%;
+        font-family: manrope;
+        color: rgba(#000000, 0.64);
+    }
+    &__image {
+        width: 100%;
+        @include vwUnit("width", 900);
+        height: 100vh;
+        position: relative;
+        background-color: #000;
+        @include vwUnit("border-top-left-radius", 120);
+        @include vwUnit("border-bottom-left-radius", 120);
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+    &__logo {
+        position: absolute;
+        @include vwUnit("width", 320);
+        @include vwUnit("height", 180);
+        @include vwUnit("bottom", -60);
+        // transition: 0.3s ease-in-out;
+        // opacity: 1;
+
+        // &--scroll-top {
+        //   opacity: 0;
+        // }
+    }
+    &__title-wrapper {
+        position: relative;
+        height: max-content;
+    }
+    &__categories {
+        @include vwUnit("margin-top", 48);
+    }
+    &__category-label {
+        display: block;
+        font-family: manrope;
+        color: rgba(#000000, 0.64);
+        @include vwUnit("margin-bottom", 16);
+    }
+    &__category-items-wrapper {
+        @include vwUnit("max-width", 640);
+        display: flex;
+        flex-wrap: wrap;
+        @include vwUnit("gap", 8);
+    }
+}

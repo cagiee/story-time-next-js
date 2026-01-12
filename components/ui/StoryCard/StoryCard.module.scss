@@ -1,0 +1,108 @@
+.storyCard {
+    &__items {
+        // @include vwUnit("width", 380);
+        // @include vwUnit("min-width", 380);
+        position: relative;
+        @include vwUnit("padding-top", 16);
+        @include vwUnit("padding-bottom", 16);
+    }
+
+    &__variant {
+        &--default {
+            border: 1px solid rgba($primary, 0.3);
+            @include vwUnit("border-radius", 12);
+            @include vwUnit("padding-left", 16);
+            @include vwUnit("padding-right", 16);
+        }
+        &--no-border {
+            border: 0;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        @include vwUnit("height", 300);
+        position: relative;
+        border: 1px solid rgba($primary, 0.3);
+        @include vwUnit("border-radius", 12);
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__items-title {
+        @include vwUnit("font-size", 24);
+        display: block;
+        @include vwUnit("margin-top", 18);
+        font-weight: 700;
+        color: $primary;
+        text-decoration: none;
+        width: max-content;
+        letter-spacing: -0.02em;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__items-description {
+        @include vwUnit("margin-top", 18);
+        @include vwUnit("margin-bottom", 18);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+        line-height: 150%;
+    }
+
+    &__topbar {
+        position: relative;
+        @include vwUnit("height", 30);
+        @include vwUnit("margin-bottom", 16);
+        display: flex;
+        @include vwUnit("gap", 8);
+        align-items: center;
+    }
+
+    &__user-profile {
+        position: relative;
+        @include vwUnit("width", 30);
+        @include vwUnit("height", 30);
+        @include vwUnit("min-width", 30);
+        @include vwUnit("min-height", 30);
+        border: 1px solid rgba($primary, 0.3);
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+            user-select: none;
+        }
+    }
+    &__user-name {
+        display: block;
+        white-space: nowrap;
+    }
+    &__user-date {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+        align-items: center;
+    }
+    &__theme {
+        &--dark {
+            .storyCard__items-title,
+            .storyCard__items-description {
+                color: $surface;
+            }
+        }
+        &--theme {
+            .storyCard__items-title,
+            .storyCard__items-description {
+                color: $primary;
+            }
+        }
+    }
+}

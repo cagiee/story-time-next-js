@@ -1,0 +1,18 @@
+.loginForm {
+    &__text {
+        font-weight: 300;
+
+        a,
+        span {
+            color: $primary;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            @include vwUnit("margin-left", 4);
+        }
+    }
+    &__button {
+        @include vwUnit("margin-top", 12);
+        @include vwUnit("margin-bottom", 24);
+    }
+}

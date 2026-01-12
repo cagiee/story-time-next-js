@@ -1,0 +1,11 @@
+.latestStory {
+    position: relative;
+    @include vwUnit("margin-bottom", 96);
+
+    &__title {
+        // @include vwUnit("font-size", 64);
+        @include vwUnit("font-size", 64);
+        font-family: "ptSerif";
+        font-weight: normal;
+    }
+}

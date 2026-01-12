@@ -1,0 +1,18 @@
+.footer {
+    background-color: $primary;
+    color: $surface;
+    @include vwUnit("padding-top", 32);
+    @include vwUnit("padding-bottom", 32);
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        @include vwUnit("gap", 16);
+    }
+}

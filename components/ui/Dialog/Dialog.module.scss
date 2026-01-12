@@ -1,0 +1,73 @@
+.dialog {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    &__overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($primary, 0.3);
+        backdrop-filter: blur(8px);
+        opacity: 0;
+        animation: fadeIn 0.3s both;
+    }
+
+    &__card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $surface;
+        @include vwUnit("padding", 32);
+        @include vwUnit("border-radius", 8);
+        @include vwUnit("min-width", 600);
+        opacity: 0;
+        animation: fadeIn 0.3s both;
+
+        &--center {
+            text-align: center;
+
+            .dialog__action {
+                justify-content: center;
+            }
+        }
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__title {
+        @include vwUnit("font-size", 32);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        display: block;
+        @include vwUnit("margin-bottom", 16);
+    }
+
+    &__description {
+        color: $primary;
+        display: block;
+        @include vwUnit("margin-bottom", 36);
+    }
+
+    &__action {
+        display: flex;
+        @include vwUnit("margin-top", 36);
+        @include vwUnit("gap", 12);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

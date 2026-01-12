@@ -1,0 +1,49 @@
+.categoryStory {
+    position: relative;
+
+    &__content {
+        width: 100%;
+        @include vwUnit("padding-top", 48);
+        @include vwUnit("padding-bottom", 48);
+    }
+
+    &__image {
+        @include vwUnit("width", 780);
+        @include vwUnit("height", 780);
+        @include vwUnit("min-width", 780);
+        @include vwUnit("min-height", 780);
+        position: relative;
+    }
+
+    &__theme {
+        &--dark {
+            color: #ddd;
+        }
+        &--light {
+            color: $primary;
+        }
+    }
+
+    &__direction {
+        &--left {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        &--right {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__title {
+        @include vwUnit("font-size", 48);
+        font-family: "PT Serif";
+        @include vwUnit("margin-bottom", 24);
+        display: block;
+    }
+
+    &__items-wrapper {
+        display: flex;
+        @include vwUnit("gap", 32);
+    }
+}

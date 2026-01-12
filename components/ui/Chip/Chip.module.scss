@@ -1,0 +1,34 @@
+.chip {
+    font-family: manrope;
+    position: relative;
+    background-color: $surface;
+    color: $primary;
+    border: 1px solid rgba($primary, 0.3);
+    width: max-content;
+    border-radius: 9999px;
+    transition: 0.3s;
+
+    &__hover:hover {
+        cursor: pointer;
+    }
+    &__hover:hover,
+    &[data-active="true"] {
+        background-color: $primary;
+        color: $surface;
+    }
+
+    &__size--base {
+        @include vwUnit("font-size", 16);
+        @include vwUnit("padding-top", 12);
+        @include vwUnit("padding-bottom", 12);
+        @include vwUnit("padding-left", 24);
+        @include vwUnit("padding-right", 24);
+    }
+    &__size--sm {
+        @include vwUnit("font-size", 14);
+        @include vwUnit("padding-top", 6);
+        @include vwUnit("padding-bottom", 6);
+        @include vwUnit("padding-left", 16);
+        @include vwUnit("padding-right", 16);
+    }
+}

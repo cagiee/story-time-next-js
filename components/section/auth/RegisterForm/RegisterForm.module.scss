@@ -1,0 +1,26 @@
+.registerForm {
+    &__text {
+        font-weight: 300;
+
+        a {
+            color: $primary;
+            font-weight: 700;
+            text-decoration: underline;
+            cursor: pointer;
+            @include vwUnit("margin-left", 4);
+        }
+    }
+    &__button {
+        @include vwUnit("margin-top", 12);
+        @include vwUnit("margin-bottom", 24);
+    }
+    &__2Column {
+        display: flex;
+        width: 100%;
+        @include vwUnit("gap", 36);
+
+        & > div {
+            width: 100%;
+        }
+    }
+}

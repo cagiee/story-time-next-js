@@ -1,0 +1,32 @@
+.alert {
+    display: block;
+    width: 100%;
+    border: 1px solid $primary;
+    background-color: rgba($primary, 0.05);
+    color: $primary;
+    @include vwUnit("padding", 24);
+    @include vwUnit("border-radius", 8);
+
+    &__title {
+        display: block;
+        font-weight: 700;
+        @include vwUnit("margin-bottom", 12);
+    }
+
+    &__message {
+        display: block;
+    }
+
+    &__color {
+        &--danger {
+            border-color: $danger;
+            background-color: rgba($danger, 0.05);
+            color: $danger;
+        }
+        &--success {
+            border-color: $success;
+            background-color: rgba($success, 0.05);
+            color: $success;
+        }
+    }
+}

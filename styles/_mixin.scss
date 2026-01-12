@@ -1,0 +1,44 @@
+@use "sass:list";
+@use "_function.scss" as func;
+@use "_variable.scss" as var;
+
+@mixin vwDesktop($property, $value) {
+  @each $breakpoint in var.$desktopBreakpoints {
+    @if ($breakpoint == list.nth(var.$desktopBreakpoints, 1)) {
+      #{$property}: func.unit($value, $breakpoint);
+    } @else {
+      @media screen and (max-width: #{$breakpoint}px) {
+        #{$property}: func.unit($value, $breakpoint);
+      }
+    }
+  }
+}
+@mixin vwMobile($property, $value) {
+  @each $breakpoint in var.$mobileBreakpoints {
+    @media screen and (max-width: #{$breakpoint}px) {
+      #{$property}: func.unit($value, $breakpoint);
+    }
+  }
+}
+@mixin vwTablet($property, $value) {
+  @each $breakpoint in var.$tabletBreakpoints {
+    @media screen and (max-width: #{$breakpoint}px) {
+      #{$property}: func.unit($value, $breakpoint);
+    }
+  }
+}
+@mixin vwUnit($property, $valueD, $valueM: null, $valueT: null) {
+  @if ($valueM == null) {
+    $valueM: $valueD;
+  }
+  @if ($valueT == null and $valueM == null) {
+    $valueT: $valueD;
+  }
+  @if ($valueT == null and $valueM != null) {
+    $valueT: $valueM;
+  }
+
+  @include vwDesktop($property, $valueD);
+  @include vwMobile($property, $valueM);
+  @include vwTablet($property, $valueT);
+}

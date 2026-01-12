@@ -1,0 +1,63 @@
+.textfield {
+    position: relative;
+    &__input {
+        @include vwUnit("padding-top", 18);
+        @include vwUnit("padding-bottom", 18);
+        @include vwUnit("padding-left", 20);
+        @include vwUnit("padding-right", 20);
+        @include vwUnit("font-size", 18);
+        @include vwUnit("border-radius", 8);
+        user-select: none !important;
+        font-family: manrope;
+        border: 1px solid #cccccc;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &[data-has-icon="true"] {
+            @include vwUnit("padding-left", 56);
+        }
+
+        &--fluid {
+            width: 100%;
+        }
+
+        &--error {
+            border: 1px solid rgba($danger, 0.5);
+        }
+    }
+
+    &__icon {
+        @include vwUnit("left", 20);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__input-wrapper {
+        position: relative;
+    }
+
+    &__label {
+        @include vwUnit("font-size", 18);
+        color: rgba($primary, 0.8);
+        display: block;
+        @include vwUnit("margin-bottom", 12);
+    }
+
+    &__eye {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include vwUnit("right", 20);
+        cursor: pointer;
+    }
+
+    &__message {
+        @include vwUnit("margin-top", 12);
+        color: $danger;
+        display: block;
+    }
+}
