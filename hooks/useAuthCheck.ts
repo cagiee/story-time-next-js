@@ -16,6 +16,7 @@ export const useAuthCheck = () => {
                 data: { data },
             } = await api.profile.getProfile();
             authStore.setUser(data);
+            authStore.setLoading(false);
             return true;
         } catch (error) {
             console.error("Auth check failed", error);

@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/Footer/Footer";
 import Navbar from "@/components/layout/Navbar/Navbar";
+import ProtectedRoute from "@/components/layout/ProtectedRoute/ProtectedRoute";
 import Sidemenu from "@/components/ui/Sidemenu/Sidemenu";
 
 export default function AuthenticatedLayout({
@@ -8,7 +9,7 @@ export default function AuthenticatedLayout({
     children: React.ReactNode;
 }) {
     return (
-        <>
+        <ProtectedRoute>
             <Navbar />
             <main>
                 <div className="container">
@@ -21,6 +22,6 @@ export default function AuthenticatedLayout({
                 </div>
             </main>
             <Footer />
-        </>
+        </ProtectedRoute>
     );
 }
