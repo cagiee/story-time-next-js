@@ -1,13 +1,16 @@
 import { createContext, useContext } from "react";
 import { apiPlaceholder } from "@/configs/api";
 import AuthRepository from "@/repositories/modules/auth";
+import ProfileRepository from "@/repositories/modules/profile";
 
 interface IRepositoryContext {
     auth: AuthRepository;
+    profile: ProfileRepository;
 }
 
 const repositories: IRepositoryContext = {
     auth: new AuthRepository(apiPlaceholder),
+    profile: new ProfileRepository(apiPlaceholder),
 };
 
 export const RepositoryContext =

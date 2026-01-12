@@ -91,7 +91,7 @@ export default function Profile() {
 
         try {
             setIsLoading(true);
-            const { data: response } = await api.auth.updateProfile({
+            const { data: response } = await api.profile.updateProfile({
                 body: {
                     name: data.name,
                     about:

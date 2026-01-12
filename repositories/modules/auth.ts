@@ -5,14 +5,9 @@ import {
     IUser,
     IPostRegister,
     IAuthResponse,
-    IPostUpdateProfile,
 } from "@/types/modules/auth";
 
-interface IAuthRepository {
-    login(params: Store<IPostLogin>): FetchPromise<ApiResponse<IAuthResponse>>;
-}
-
-class AuthRepository extends FetchFactory implements IAuthRepository {
+class AuthRepository extends FetchFactory {
     login({
         body,
     }: Store<IPostLogin>): FetchPromise<ApiResponse<IAuthResponse>> {
@@ -23,14 +18,11 @@ class AuthRepository extends FetchFactory implements IAuthRepository {
     }: Store<IPostRegister>): FetchPromise<ApiResponse<IAuthResponse>> {
         return this.call("/register", { method: "POST", data: body });
     }
-    getProfile(): FetchPromise<ApiResponse<IUser>> {
-        return this.call(`/me`, { method: "GET" });
-    }
-    updateProfile({
-        body,
-    }: Store<IPostUpdateProfile>): FetchPromise<ApiResponse<{ user: IUser }>> {
-        return this.call("/me", { method: "PATCH", data: body });
-    }
+    // updateProfile({
+    //     body,
+    // }: Store<IPostUpdateProfile>): FetchPromise<ApiResponse<{ user: IUser }>> {
+    //     return this.call("/me", { method: "PATCH", data: body });
+    // }
 }
 
 export default AuthRepository;

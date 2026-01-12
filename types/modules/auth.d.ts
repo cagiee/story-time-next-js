@@ -21,7 +21,3 @@ export interface IUser {
     created_at: string;
     updated_at: string;
 }
-export interface IPostUpdateProfile {
-    name: string;
-    about: string | null;
-}
