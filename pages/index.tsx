@@ -25,7 +25,14 @@ export default function Home() {
                 direction="left"
                 color="#ffffff"
                 theme="light"
-                image={<Image src="/images/comedy.png" fill alt="a" />}
+                image={
+                    <Image
+                        src="/images/comedy2.png"
+                        fill
+                        alt="a"
+                        objectFit="contain"
+                    />
+                }
                 category={{
                     id: 1,
                     name: "Comedy",
