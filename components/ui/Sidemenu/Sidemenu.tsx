@@ -31,7 +31,7 @@ export default function Sidemenu() {
                             Profile
                         </li>
                     </Link>
-                    <Link href={"/profile"}>
+                    <Link href={"/change-password"}>
                         <li>
                             <Lock size={18} />
                             Change Password

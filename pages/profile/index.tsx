@@ -191,7 +191,7 @@ export default function Profile() {
                         required: "Name is required",
                         maxLength: {
                             value: 24,
-                            message: "Nama length can not exceed 24 character",
+                            message: "Name length can not exceed 24 character",
                         },
                     })}
                     placeholder="Enter your name"

@@ -1,6 +1,7 @@
 import { FetchPromise, Store, ApiResponse } from "@/types/api";
 import FetchFactory from "../factory";
 import type {
+    IPostChangePassword,
     IPostUpdateProfile,
     IPostUpdateProfileImage,
 } from "@/types/modules/profile";
@@ -24,6 +25,12 @@ class ProfileRepository extends FetchFactory {
                     "Content-Type": "multipart/form-data",
                 },
             },
+        });
+    }
+    changePassword({ body }: Store<IPostChangePassword>) {
+        return this.call("/me/change-password", {
+            method: "POST",
+            data: body,
         });
     }
 }

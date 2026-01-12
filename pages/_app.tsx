@@ -23,7 +23,7 @@ const ptSerif = PT_Serif({
 });
 
 const blankLayoutPageList = ["/auth/login", "/auth/register"];
-const authenticatedLayoutPageList = ["/profile"];
+const authenticatedLayoutPageList = ["/profile", "/change-password"];
 
 export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
