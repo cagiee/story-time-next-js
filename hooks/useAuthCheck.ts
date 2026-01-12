@@ -12,11 +12,9 @@ export const useAuthCheck = () => {
                 return false;
             }
 
-            console.log(authStore.token);
-
             const {
                 data: { data },
-            } = await api.auth.getProfile();
+            } = await api.profile.getProfile();
             authStore.setUser(data);
             return true;
         } catch (error) {

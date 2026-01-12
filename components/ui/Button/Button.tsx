@@ -6,6 +6,7 @@ interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     color?: "primary" | "surface" | "danger" | "warning" | "success";
     fluid?: boolean;
     loading?: boolean;
+    disabled?: boolean;
     text: string;
     prependIcon?: LucideIcon;
 }
@@ -14,6 +15,7 @@ const Button: React.FC<IButton> = ({
     color,
     fluid,
     loading,
+    disabled,
     text,
     type,
     prependIcon: Icon,
@@ -28,7 +30,7 @@ const Button: React.FC<IButton> = ({
             }`}
             {...props}
             type={type ?? "button"}
-            disabled={loading}
+            disabled={loading || disabled}
         >
             {Icon && <Icon className={styles.button__icon} size={16} />}
             {loading && (

@@ -91,6 +91,15 @@ export default function Profile() {
 
         try {
             setIsLoading(true);
+            if (profileImage) {
+                const { data: response } = await api.profile.updateProfileImage(
+                    {
+                        body: {
+                            profile_image: profileImage,
+                        },
+                    }
+                );
+            }
             const { data: response } = await api.profile.updateProfile({
                 body: {
                     name: data.name,
@@ -127,6 +136,9 @@ export default function Profile() {
             name: user?.name,
             about: user?.about,
         });
+        if (user && user.profile_image) {
+            setImageSrc(user.profile_image);
+        }
     }, [user]);
     useEffect(() => {
         if (!showCropperDialog) {
@@ -167,6 +179,7 @@ export default function Profile() {
                                 text="Change Picture"
                                 variant="outlined"
                                 onClick={() => handleButtonClick()}
+                                disabled={isLoading}
                             />
                         </div>
                         <span>Please upload a PNG or JPEG file under 5MB.</span>
@@ -184,6 +197,7 @@ export default function Profile() {
                     placeholder="Enter your name"
                     errorMessage={errors.name?.message}
                     label="Name *"
+                    disabled={isLoading}
                 />
                 <Textfield
                     type="email"
@@ -203,6 +217,7 @@ export default function Profile() {
                     type="text"
                     label="About Me"
                     placeholder="Describe yourself"
+                    disabled={isLoading}
                 />
             </form>
             <Dialog
