@@ -20,6 +20,15 @@ export default function StoryCard(params: IStoryCard) {
             } ${styles["storyCard__theme--" + (params.theme ?? "light")]}
             `}
         >
+            <div className={styles.storyCard__image}>
+                <Image src={params.story.cover_image} alt="story1" fill />
+            </div>
+            <Link href="" className={styles["storyCard__items-title"]}>
+                {params.story.title}
+            </Link>
+            <div className={styles["storyCard__items-description"]}>
+                {params.story.content_preview}
+            </div>
             <div className={styles["storyCard__topbar"]}>
                 <div className={styles["storyCard__user-profile"]}>
                     <Image
@@ -32,25 +41,13 @@ export default function StoryCard(params: IStoryCard) {
                     {params.story.author.name}
                 </span>
                 <span className={styles["storyCard__user-date"]}>
-                    {formatRelativeDate(params.story.created_at)}
+                    <Chip
+                        text={params.story.category.name}
+                        size="sm"
+                        disableHoverEffect
+                    />
                 </span>
             </div>
-            <div className={styles.storyCard__image}>
-                <Image src={params.story.cover_image} alt="story1" fill />
-            </div>
-            <Link href="" className={styles["storyCard__items-title"]}>
-                {params.story.title}
-            </Link>
-            <div className={styles["storyCard__items-description"]}>
-                {params.story.content_preview}
-            </div>
-            <span className={styles["storyCard__items-categories"]}>
-                <Chip
-                    text={params.story.category.name}
-                    size="sm"
-                    disableHoverEffect
-                />
-            </span>
         </div>
     );
 }
