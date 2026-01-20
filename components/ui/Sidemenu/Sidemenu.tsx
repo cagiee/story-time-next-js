@@ -43,12 +43,6 @@ export default function Sidemenu() {
                             My Story
                         </li>
                     </Link>
-                    <Link href={"/profile"}>
-                        <li>
-                            <Bookmark size={18} />
-                            Saved Story
-                        </li>
-                    </Link>
                 </ul>
                 <div className={styles.sidemenu__action}>
                     <Button

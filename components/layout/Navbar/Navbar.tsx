@@ -118,12 +118,6 @@ export default function Navbar() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href={"/"}>
-                                    <Bookmark />
-                                    Saved
-                                </Link>
-                            </li>
-                            <li>
                                 <Link href={"/profile"}>
                                     <User />
                                     {user?.name}
