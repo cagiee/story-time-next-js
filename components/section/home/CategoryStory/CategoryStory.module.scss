@@ -46,4 +46,9 @@
         display: flex;
         @include vwUnit("gap", 32);
     }
+
+    &__swiper {
+        overflow: hidden;
+        @include vwUnit("width", 1020);
+    }
 }

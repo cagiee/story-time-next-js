@@ -44,7 +44,6 @@ class FetchFactory {
             (options?.options?.params
                 ? JSON.stringify(options?.options?.params)
                 : "");
-        console.log(key);
         this.controllers.get(key)?.abort();
         this.controllers.set(key, controller);
 
