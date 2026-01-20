@@ -29,7 +29,7 @@ class FetchFactory {
 
     async call<T, B extends object = object>(
         url: string,
-        options?: FactoryOptions<B>
+        options?: FactoryOptions<B>,
     ) {
         let authToken = "";
 
@@ -39,13 +39,20 @@ class FetchFactory {
         }
 
         const controller = new AbortController();
-        this.controllers.get(url)?.abort();
-        this.controllers.set(url, controller);
+        const key =
+            url +
+            (options?.options?.params
+                ? JSON.stringify(options?.options?.params)
+                : "");
+        console.log(key);
+        this.controllers.get(key)?.abort();
+        this.controllers.set(key, controller);
 
         return this.axiosInstance<T>(url, {
             method: options?.method ?? "GET",
             data: options?.data,
-            signal: options?.withSignal ?? true ? controller.signal : undefined,
+            signal:
+                (options?.withSignal ?? true) ? controller.signal : undefined,
             ...options?.options,
             headers: {
                 ...options?.options?.headers,
