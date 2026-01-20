@@ -23,17 +23,21 @@ const ptSerif = PT_Serif({
 });
 
 const blankLayoutPageList = ["/auth/login", "/auth/register"];
-const authenticatedLayoutPageList = ["/profile", "/change-password"];
+const authenticatedLayoutPageList = [
+    "/profile",
+    "/change-password",
+    "/my-story",
+];
 
 export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter();
     const { checkAuth } = useAuthCheck();
 
     const isBlankLayout = blankLayoutPageList.some(
-        (path) => router.asPath === path
+        (path) => router.asPath === path,
     );
     const isAuthenticatedLayout = authenticatedLayoutPageList.some(
-        (path) => router.asPath === path
+        (path) => router.asPath === path,
     );
 
     useEffect(() => {

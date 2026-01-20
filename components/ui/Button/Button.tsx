@@ -32,7 +32,9 @@ const Button: React.FC<IButton> = ({
             type={type ?? "button"}
             disabled={loading || disabled}
         >
-            {Icon && <Icon className={styles.button__icon} size={16} />}
+            {Icon && !loading && (
+                <Icon className={styles.button__icon} size={16} />
+            )}
             {loading && (
                 <Loader2 className="loading-spinner-animation" size={18} />
             )}

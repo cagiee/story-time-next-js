@@ -14,71 +14,7 @@ interface ICategoryStory {
 
 export default function HomeCategoryStory(params: ICategoryStory) {
     const story: IDataList<IStory> = {
-        list: [
-            {
-                id: "1",
-                author: {
-                    id: "1",
-                    name: "Cagie",
-                    profile_image:
-                        "https://i.pinimg.com/1200x/a6/aa/5d/a6aa5d80551d471078f799e1473c20fb.jpg",
-                },
-                category: {
-                    id: "1",
-                    name: "Horror",
-                    slug: "horror",
-                },
-                content_preview:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde minima vitae, ex commodi ad repellendus dicta. Quaerat voluptatibus molestiae non in architecto, itaque ut aspernatur adipisci, repellendus eveniet eligendi neque!",
-                cover_image:
-                    "https://images.pexels.com/photos/5435430/pexels-photo-5435430.jpeg",
-                created_at: "2025-10-31",
-                slug: "lorem-ipsum",
-                title: "Lorem Ipsum 1",
-            },
-            {
-                id: "2",
-                author: {
-                    id: "1",
-                    name: "Cagie",
-                    profile_image:
-                        "https://i.pinimg.com/1200x/a6/aa/5d/a6aa5d80551d471078f799e1473c20fb.jpg",
-                },
-                category: {
-                    id: "1",
-                    name: "Horror",
-                    slug: "horror",
-                },
-                content_preview:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde minima vitae, ex commodi ad repellendus dicta. Quaerat voluptatibus molestiae non in architecto, itaque ut aspernatur adipisci, repellendus eveniet eligendi neque!",
-                cover_image:
-                    "https://images.pexels.com/photos/5435430/pexels-photo-5435430.jpeg",
-                created_at: "2025-10-31",
-                slug: "lorem-ipsum",
-                title: "Lorem Ipsum 2",
-            },
-            {
-                id: "3",
-                author: {
-                    id: "1",
-                    name: "Cagie",
-                    profile_image:
-                        "https://i.pinimg.com/1200x/a6/aa/5d/a6aa5d80551d471078f799e1473c20fb.jpg",
-                },
-                category: {
-                    id: "1",
-                    name: "Horror",
-                    slug: "horror",
-                },
-                content_preview:
-                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde minima vitae, ex commodi ad repellendus dicta. Quaerat voluptatibus molestiae non in architecto, itaque ut aspernatur adipisci, repellendus eveniet eligendi neque!",
-                cover_image:
-                    "https://images.pexels.com/photos/5435430/pexels-photo-5435430.jpeg",
-                created_at: "2025-10-31",
-                slug: "lorem-ipsum",
-                title: "Lorem Ipsum 3",
-            },
-        ],
+        list: [],
     };
 
     return (

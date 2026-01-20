@@ -21,7 +21,7 @@ export default function Navbar() {
     const handleScroll = () => {
         if (window.scrollY === 0) {
             const isAnimationActive = activeAnimationPageList.includes(
-                router.pathname
+                router.pathname,
             );
             if (!isAtTop && isAnimationActive) {
                 setIsAtTop(true);
@@ -112,7 +112,7 @@ export default function Navbar() {
                         // </div>
                         <ul className={styles["navbar__items-wrapper"]}>
                             <li>
-                                <Link href={"/"}>
+                                <Link href={"/my-story"}>
                                     <Book />
                                     My Story
                                 </Link>

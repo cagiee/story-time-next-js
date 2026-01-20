@@ -37,7 +37,7 @@ export default function Sidemenu() {
                             Change Password
                         </li>
                     </Link>
-                    <Link href={"/profile"}>
+                    <Link href={"/my-story"}>
                         <li>
                             <Book size={18} />
                             My Story

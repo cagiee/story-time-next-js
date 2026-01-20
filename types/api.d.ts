@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+import { IMeta } from ".";
 
 export type FetchPromise<T> = Promise<AxiosResponse<T>>;
 
@@ -27,5 +28,5 @@ export type Update<K extends string, B, T = object> = Detail<K, T> & Store<B>;
 export interface ApiResponse<T> {
     message: string;
     data: T;
-    meta: number;
+    meta: IMeta;
 }

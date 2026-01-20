@@ -1,0 +1,43 @@
+.select {
+    @include vwUnit("padding-top", 18);
+    @include vwUnit("padding-bottom", 18);
+    @include vwUnit("padding-left", 20);
+    @include vwUnit("padding-right", 42);
+    @include vwUnit("font-size", 18);
+    @include vwUnit("border-radius", 8);
+    user-select: none !important;
+    font-family: manrope;
+    border: 1px solid #cccccc;
+    position: relative;
+    background-color: transparent;
+    appearance: none;
+    // -webkit-appearance: none;/
+    // -moz-appearance: none;
+    // background: none;
+    overflow: visible;
+    text-overflow: ellipsis;
+
+    &--has-icon {
+        @include vwUnit("padding-left", 42);
+    }
+
+    &__wrapper {
+        position: relative;
+        display: flex;
+        height: 100%;
+    }
+
+    &__expand-icon {
+        position: absolute;
+        @include vwUnit("right", 16);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__icon {
+        position: absolute;
+        @include vwUnit("left", 16);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

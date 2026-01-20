@@ -1,0 +1,78 @@
+.myStory {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @include vwUnit("gap", 24);
+    @include vwUnit("padding-bottom", 48);
+
+    &__title-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        font-family: "PT Serif";
+        font-weight: normal;
+        @include vwUnit("font-size", 36);
+        margin: 0;
+        padding: 0;
+        @include vwUnit("height", 56);
+    }
+    &__items-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1%;
+    }
+    &__items-wrapper > * {
+        break-inside: avoid;
+        @include vwUnit("margin-bottom", 16);
+        display: inline-block;
+        width: 32.66%;
+    }
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+
+        & > * {
+            display: inline-block;
+        }
+    }
+    &__filter {
+        display: flex;
+        @include vwUnit("gap", 12);
+    }
+    &__loadmore {
+        display: flex;
+        justify-content: center;
+    }
+    &__nodata-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        @include vwUnit("gap", 24);
+    }
+    &__nodata {
+        position: relative;
+        @include vwUnit("width", 240);
+        @include vwUnit("height", 240);
+    }
+    &__nodata-text {
+        display: flex;
+        flex-direction: column;
+        @include vwUnit("gap", 12);
+        text-align: center;
+    }
+    &__nodata-title {
+        @include vwUnit("font-size", 27);
+        font-weight: 600;
+    }
+    &__nodata-description {
+        @include vwUnit("width", 480);
+    }
+    &__nodata-button {
+        display: flex;
+        justify-content: center;
+        @include vwUnit("margin-top", 12);
+    }
+}
